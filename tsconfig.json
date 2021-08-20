@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "allowUnreachableCode": false,
+        "target": "ES5",
+        "types": [
+            "three"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
