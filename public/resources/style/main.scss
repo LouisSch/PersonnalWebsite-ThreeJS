@@ -1,11 +1,18 @@
 @import "_config.scss";
 @import "_mixins.scss";
+@import "_geometry.scss";
+
+@font-face {
+  font-family: "JetBrains";
+  src: url("/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype"),
+       url("/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2");
+}
 
 html, body {
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 #animation {
@@ -18,39 +25,68 @@ html, body {
   max-height: 100% !important;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr $block-size 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "left center right";
-  width: calc(100% - 2 * #{$center-pading});
-  height: calc(100% - 2 * #{$center-pading});
-  padding: $center-pading;
+#container {
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-.left { grid-area: left; }
+.hidden {
+  display: none;
+  opacity: 0;
+}
 
-.center { 
-  grid-area: center;
-  background-color: #2a2a2a;
-  width: calc(100% - 2 * #{$center-pading});
-  height: calc(100% - 2 * #{$center-pading});
-  padding: $center-pading;
- }
+#welcome {
 
-.right { grid-area: right; }
-
-// Need to increase size of center when small
-.top-image {
-  @include small-up {
-    @include avatar(20%, true, true);
+  @include medium-up {
+    @include popup(400px, 400px, #2a2a2a);
+    p {
+      font-size: 12pt;
+    }
+    .main-title {
+      font-size: 14pt !important;
+    }
   }
 
-  @include small-down {
-    @include avatar(15%, true, true);
+  @include medium-down {
+    @include popup(300px, 300px, #2a2a2a);
+    p {
+      font-size: 10pt;
+    }
+    .main-title {
+      font-size: 12pt !important;
+    }
   }
 
-  border: 2px white solid;
+  p {
+    font-family: "JetBrains";
+    line-height: 1.6;
+    text-align: center;
+    margin: 65% 30px 0 30px;
+    color: white;
+  }
+
+  border-radius: 40px;
+}
+
+#inner-welcome {
+  @include medium-up {
+    @include popup(350px, 350px, #2a2a2a);
+  }
+
+  @include medium-down {
+    @include popup(250px, 250px, #2a2a2a);
+  }
+
+  img {
+    @include avatar(50%, true, true);
+    border: 0.2rem white solid;
+    margin-top: 10px;
+  }
+
+  background-color: transparent !important;
+  border: 1px white solid;
+  border-radius: 40px;
+  z-index: 10;
 }

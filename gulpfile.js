@@ -16,6 +16,7 @@ gulp.task('watcher', () => {
         return gulp.src(path.join(__dirname + '/public/resources/style/*.scss'))
             .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError))
+            .pipe(cleaner())
             .pipe(autoprefixer({
                 cascade: false
             }))

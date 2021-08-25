@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,19 +17,25 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <div class="container">
-            <div class="left"></div>
-            <div class="center">
-                <img class="top-image" src="/resources/pics/LouisSchirra.jpg"/>
+
+        <div id="container">
+            <div id="inner-welcome" class="anime-welcome hidden">
+                <img src="/assets/pics/LouisSchirra.jpg" class="trigger-photo"/>
+                <div class="triangle white-triangle"></div>
+                <div class="triangle sup"></div>
             </div>
-            <div class="right"></div>
+            <div id="welcome" class="anime-welcome hidden">
+                <div class="triangle"></div>
+                <p>
+                    <span class="main-title">Welcome, I'm Louis !</span><br />
+                    Click on my face above to learn more about me
+                </p>
+            </div>
         </div>
 
         <noscript>
             Please enable scripts to correctly access this Website.
         </noscript>
-
         <canvas id="animation"></canvas>
     </body>
 </html>
